@@ -243,6 +243,9 @@ angular.module('am.multiselect', [])
                 selectMultiple(item);
             }
         }
+        scope.isSelected = function(item) {
+            return attrs.msSelectedIds ? (attrs.msSelectedIds.indexOf(item.model.id) !== -1) : false;
+        };
         }
     };
 }])

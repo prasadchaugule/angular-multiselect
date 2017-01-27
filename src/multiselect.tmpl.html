@@ -11,7 +11,7 @@
             <button class="btn btn-link btn-xs" ng-click="checkAll()" type="button"><i class="glyphicon glyphicon-ok"></i> Check all</button>
             <button class="btn btn-link btn-xs" ng-click="uncheckAll()" type="button"><i class="glyphicon glyphicon-remove"></i> Uncheck all</button>
         </li>
-        <li ng-repeat="i in items | filter:searchText" ng-class="{'selected': $index === selectedIndex}">
+        <li ng-class="{'disabled':isSelected(i)}" ng-repeat="i in items | filter:searchText" ng-class="{'selected': $index === selectedIndex}">
             <a ng-click="select(i); focus()">
             <i class='glyphicon' ng-class="{'glyphicon-ok': i.checked, 'empty': !i.checked}"></i> {{i.label}}</a>
         </li>
